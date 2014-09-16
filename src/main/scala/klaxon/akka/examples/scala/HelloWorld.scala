@@ -1,7 +1,6 @@
 package klaxon.akka.examples.scala
 
-import akka.actor.{ActorLogging, Actor, Props, ActorSystem}
-import akka.event.{Logging, LoggingAdapter}
+import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
 
 /**
  * <p>date 9/16/14 </p>

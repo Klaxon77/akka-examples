@@ -11,7 +11,7 @@ import akka.event.LoggingAdapter;
  */
 public class GreetingActor extends UntypedActor {
 
-    LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+    private LoggingAdapter log = Logging.getLogger(getContext().system(), this);
 
     public void onReceive(Object message) throws Exception {
         if (message instanceof Greeting) {

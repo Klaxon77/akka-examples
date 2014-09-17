@@ -8,6 +8,11 @@
     <artifactId>akka-examples</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -28,6 +33,7 @@
     </build>
 
     <dependencies>
+        <!-- Scala -->
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
@@ -38,9 +44,28 @@
             <artifactId>scala-compiler</artifactId>
             <version>2.11.2</version>
         </dependency>
+
+        <!-- Akka -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.11</artifactId>
+            <version>2.3.5</version>
+        </dependency>
+
+        <!-- Camel -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-scala</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-camel_2.11</artifactId>
             <version>2.3.5</version>
         </dependency>
     </dependencies>

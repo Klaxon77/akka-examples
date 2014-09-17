@@ -14,7 +14,7 @@ import scala.concurrent.duration._
  * <p>date 9/17/14 </p>
  * @author klaxon
  */
-object Future {
+object FutureAkka {
 
   implicit val timeout = Timeout(5 seconds)
 
@@ -28,18 +28,6 @@ object Future {
     println(s"Calculated fibonacci for 12: " + Await.result(futureFibonacci, 5 seconds))
 
     actorSystem.shutdown()
-  }
-
-}
-
-class FibonacciActor extends Actor {
-
-  val fibs: Stream[Int] = 0 #:: fibs.scanLeft(1)(_ + _)
-
-  override def receive: Receive = {
-    case number: Int =>
-      TimeUnit.SECONDS.sleep(1)
-      sender() ! fibs(number)
   }
 
 }

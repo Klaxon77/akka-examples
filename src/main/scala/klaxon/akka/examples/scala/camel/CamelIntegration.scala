@@ -17,8 +17,8 @@ object CamelIntegration {
     val actorSystem = ActorSystem("camel-system")
     actorSystem.actorOf(Props[ReverseBodyActor], "reverser")
     actorSystem.actorOf(Props[UpperCaseActor], "upperCase")
-    actorSystem.actorOf(Props[EndLogConsumer], "consumer")
     val spaceChopper = actorSystem.actorOf(Props[SpaceChopperActor], "spaceChopper")
+    actorSystem.actorOf(Props[EndLogConsumer], "consumer")
 
     val camel = CamelExtension(actorSystem)
     camel.context.addRoutes(new RouteBuilder() {
